@@ -1,0 +1,33 @@
+class Solution:
+    def asteroidCollision(self, asteroids: List[int]) -> List[int]:
+        stack = []
+        for a in asteroids:
+        # check only for the collision, in other conditions you will only append in the stack
+            while stack and stack[-1] > 0 and a < 0:
+                diff = a + stack[-1]
+                if diff > 0:
+                    a = 0
+                elif diff < 0:
+                    stack.pop()
+                else:
+                    stack.pop()
+                    a = 0
+            if a:
+                stack.append(a)
+
+        return stack
+                    
+
+
+
+            
+
+
+
+        return stack
+
+
+
+
+
+        
